@@ -1,0 +1,250 @@
+:root {
+  --whitewhite: rgba(255, 255, 255, 1);
+  --grey-1000: rgba(31, 36, 41, 1);
+  --body-medium-font-family: "Inter", Helvetica;
+  --body-medium-font-weight: 500;
+  --body-medium-font-size: 15px;
+  --body-medium-letter-spacing: 0px;
+  --body-medium-line-height: 20px;
+  --body-medium-font-style: normal;
+  --t2-semibold-font-family: "Inter", Helvetica;
+  --t2-semibold-font-weight: 600;
+  --t2-semibold-font-size: 16px;
+  --t2-semibold-letter-spacing: 0px;
+  --t2-semibold-line-height: 20px;
+  --t2-semibold-font-style: normal;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b3bbda;
+}
+
+a {
+  text-decoration: none;
+}
+
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+
+.m-FRAME {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #b3bbda;
+}
+
+.widget {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: auto;
+  margin: auto;
+  box-shadow: 0px 20px 25px #1c1b2126;
+  border-radius: 32px;
+  background-color: #ffffff;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  user-select: none;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  margin-bottom: -1px; /* Ajustar para eliminar el espacio en blanco */
+}
+
+.div {
+  flex: 1;
+  background-color: #4355a3;
+  border-radius: 24px;
+  z-index: 1;
+  margin-top: -22px; /* Ajustar para eliminar el espacio en blanco */
+  height: calc(100% - 50px); /* Reduce height */
+}
+
+.frame-2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  padding: 20px;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: nowrap; /* Asegura que los elementos estén en una sola línea */
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+}
+
+.LOGO-LINEAS-negro, .rectangle {
+  height: 40px;
+  object-fit: cover;
+}
+
+.LOGO-LINEAS-negro {
+  margin-left: 10px; /* Ajustar la distancia desde la izquierda */
+}
+
+.frame-3 {
+  display: flex;
+  gap: 10px;
+}
+
+.base-button {
+  all: unset;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 100000px;
+  transition: background-color 0.4s, color 0.4s;
+  font-family: var(--body-medium-font-family);
+  font-weight: var(--body-medium-font-weight);
+  font-size: var(--body-medium-font-size);
+  letter-spacing: var(--body-medium-letter-spacing);
+  line-height: var(--body-medium-line-height);
+  white-space: nowrap;
+  font-style: var(--body-medium-font-style);
+}
+
+.button-aceptar {
+  background-color: white;
+  color: black;
+}
+
+.button-aceptar:hover {
+  background-color: #1F2429;
+  color: white;
+  cursor: pointer;
+}
+
+.button-rechazar {
+  color: black;
+}
+
+.button-rechazar:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Media queries para hacer el diseño responsivo */
+
+/* Desktops */
+@media (min-width: 1281px) {
+  .widget {
+      width: 500px;
+      height: 545px;
+  }
+  .image {
+      height: 250px;
+  }
+  .div {
+      height: calc(100% - 248px); /* Ajustar según la altura de la imagen */
+  }
+}
+
+/* Laptops */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .widget {
+      width: 500px;
+      height: 545px;
+  }
+  .image {
+      height: 250px;
+  }
+  .div {
+      height: calc(100% - 248px); /* Ajustar según la altura de la imagen */
+  }
+}
+
+/* Tablets en modo retrato */
+@media (min-width: 744px) and (max-width: 1024px) and (orientation: portrait) {
+  .widget {
+      width: 500px;
+      height: 545px;
+  }
+  .image {
+      height: 250px;
+  }
+  .div {
+      height: calc(100% - 248px); /* Ajustar según la altura de la imagen */
+  }
+}
+
+/* Tablets en modo paisaje */
+@media (min-width: 744px) and (max-width: 1024px) and (orientation: landscape) {
+  .widget {
+      width: 500px;
+      height: 545px;
+  }
+  .image {
+      height: 250px;
+  }
+  .div {
+      height: calc(100% - 248px); /* Ajustar según la altura de la imagen */
+  }
+}
+
+/* Smartphones (por ejemplo, iPhone X: 375x812px) */
+@media (min-width: 320px) and (max-width: 743px) {
+  .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .widget {
+      width: 340px; /* Adjusted width */
+      height: 626px; /* Adjusted height */
+      margin: auto; /* Center the widget horizontally */
+  }
+  .image {
+      width: 340px; /* Adjusted width */
+      height: 244px; /* Adjusted height */
+  }
+  .div {
+      width: 340px; /* Adjusted width */
+      height: 406px; /* Adjusted height */
+  }
+}
+
+/* Smartphones pequeños (por ejemplo, iPhone 5: 320x568px) */
+@media (min-width: 320px) and (max-width: 568px) {
+  .widget {
+      width: 310px; /* Hacer un poco más grande */
+      height: 420px; /* Ajustar el tamaño */
+  }
+  .image {
+      height: 150px; /* Ajustar según sea necesario */
+  }
+  .div {
+      height: calc(100% - 148px); /* Ajustar según la altura de la imagen */
+  }
+}
