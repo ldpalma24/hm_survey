@@ -68,6 +68,8 @@ class SurveyWidget extends HTMLElement {
         justify-content: center;
         align-items: center;
         background-color: ${backgroundColor};
+        margin: 0; /* Ensure no extra margin */
+        padding: 0; /* Ensure no extra padding */
       }
 
       a {
@@ -98,6 +100,7 @@ class SurveyWidget extends HTMLElement {
         border-radius: 32px;
         background-color: #ffffff;
         animation: var(--slide) 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards; /* Suavizar la animación */
+        overflow: hidden; /* Ensure no extra space */
       }
 
       .image {
@@ -352,6 +355,10 @@ box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
           padding: 0 10px; /* Reduced margin */
           font-size: 18px; /* Increased text size */
         }
+        .survey-container {
+          min-height: auto; /* Ensure a fixed height to avoid shifting */
+          overflow: hidden; /* Eliminar scroll */
+        }
       }
 
       @media (min-width: 1025px) and (max-width: 1280px) {
@@ -371,13 +378,17 @@ box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
   justify-content: center; /* Centra verticalmente */
   align-items: center; /* Centra horizontalmente */
   text-align: center; /* Asegura que el texto esté centrado */
-  height: 100%; /* Ocupa toda la altura disponible */
+  height: calc(100% - 290px); /* Ajusta la altura según sea necesario */
   padding: 0 20px; /* Márgenes laterales */
   box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
 }
         .survey-description, .survey-question {
           padding: 0 10px; /* Reduced margin */
           font-size: 18px; /* Increased text size */
+        }
+        .survey-container {
+          min-height: auto; /* Ensure a fixed height to avoid shifting */
+          overflow: hidden; /* Eliminar scroll */
         }
       }
 
@@ -461,16 +472,19 @@ button {
         .div {
           padding: 0 5px 60px 5px; /* Reduce los márgenes laterales y añade padding inferior */
           height: calc(100% - 190px); /* Ajusta la altura */
-          overflow-y: auto; /* Enable scroll if text exceeds available space */
+          overflow-y: hidden; /* Cambiado de auto a hidden para evitar scroll */
         }
 .survey-description, .survey-question {
   align-items: center; /* Centra verticalmente */
   align-self: center; /* Centra horizontalmente */
   margin-right: -15px; /* Reduce el margen derecho */
   margin-left: -15px; /* Reduce el margen izquierdo */
-  font-size: 1000px; /* Mantén el tamaño del texto reducido */
+  font-size: 14px; /* Corregido tamaño de fuente */
   line-height: 1.5; /* Mejora la legibilidad */
   text-align: justify; /* Alinea el texto para aprovechar mejor el espacio */
+}
+button {
+  margin-top: 10px; /* Asegura que los botones tengan espacio suficiente */
 }
       }
       .date-placeholder {
@@ -524,6 +538,17 @@ button {
         outline: none;
         border: 1px solid #1F2429; /* Black border */
         box-shadow: none;
+      }
+      .survey-container {
+        overflow: hidden; /* Eliminar scroll */
+      }
+      .survey-container:last-of-type {
+        margin-bottom: 0; /* Eliminar margen inferior */
+        overflow: hidden; /* Asegurar que no haya scroll */
+        height: 100%; /* Asegurar que ocupe toda la altura disponible */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Asegurar que el contenido esté alineado al inicio */
       }
       </style>
       <div class="container">
